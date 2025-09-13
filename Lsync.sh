@@ -14,6 +14,14 @@ if ping -c 1 -W 2 $HOST > /dev/null 2>&1; then  #chech if host is up
     
 else
     echo "❌ Host $HOST is down — Not updated  "
+    for i in {1..5}; do
+      echo "retry in $i" 
+    done
+      
+       rsync -avz --progress "$SRC/" "$USER@$HOST:$DEST/"
+    echo "Sync $HOST done ✅ at $Date "
+    
+    
    
 fi
 done 
