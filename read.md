@@ -8,3 +8,7 @@ rsync
 
 systemd
  → runs the sync in the background as a service.
+
+
+Resume : Each Inotify command has differnt commands set up 
+
